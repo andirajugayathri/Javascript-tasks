@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password match</title>
+    <style>
+        span{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="password" id="Password" placeholder="Enter Password">
+        <input type="password" id="Password" placeholder="Confirm Password">
+        <span style="color:red">both are not matched</span>
+        <input type="submit">
+    </form>
+    <script>
+        var form=document.forms[0];
+        form.addEventListener("submit",function(event){
+            event.preventDefault();
+            var input1=document.querySelector("input");
+            var input2=document.querySelectorAll("input");
+            if(input1.value==input2.value){
+                
+                console.log("both are matched");
+            }
+            else{
+                console.log("both are not matched");
+                var span=document.querySelector("span");
+                span.style.display="block";
+            }
+        })
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <style>
+    body { 
+       font-family: Arial, sans-serif; padding: 20px;
+    }
+    h1 { 
+        text-align: center; 
+    }
+    #todo-container { 
+        max-width: 400px; margin: auto; 
+    }
+    #task-input { 
+        width: 85%; padding: 10px; 
+    }
+    #add-task-btn, .delete-btn { 
+        padding: 10px; color: white; border: none; cursor: pointer; 
+    }
+    #add-task-btn { 
+        background-color: #4CAF50; 
+    }
+    .delete-btn { 
+        background-color: red;
+     }
+    li {
+         padding: 8px; border: 1px solid #ddd; margin-top: 15px; display: flex; justify-content: space-between; 
+    }
+  </style>
+</head>
+<body>
+  <h1>To-Do List</h1>
+  <div id="todo-container">
+    <input id="task-input" placeholder="Enter a new task">
+    <button id="add-task-btn">Add Task</button>
+    <ul id="task-list"></ul>
+  </div>
+  <script>
+    const taskInput = document.getElementById('task-input'), 
+    taskList = document.getElementById('task-list');
+    document.getElementById('add-task-btn').addEventListener('click', () => {
+      if (taskInput.value.trim()) {
+        const li = document.createElement('li');
+        li.innerHTML = `${taskInput.value} 
+        <button class="delete-btn">Delete</button>`;
+        taskList.appendChild(li);
+        taskInput.value = '';
+        li.querySelector('.delete-btn').addEventListener('click', () => taskList.removeChild(li));
+      }
+    });
+    taskInput.addEventListener('keypress', (e) => e.key === 'Enter' && document.getElementById('add-task-btn').click());
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const input = prompt("Enter an alphabet letter:").toUpperCase(); 
+        const previousCharCode = (input.charCodeAt(0) - 1 - 65 + 26) % 26 + 65; 
+        const previousLetter = String.fromCharCode(previousCharCode); 
+        alert(previousLetter);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numbers = [12, 3, 5, 6, 22, 56, 29];
+        let evenNumbers = [];
+        let oddNumbers = [];
+        sumeven=0;
+        sumodd=0;
+        for (let i = 0; i < numbers.length; i++) {
+           if (numbers[i] % 2 == 0) {
+             evenNumbers.push(numbers[i]);
+             sumeven+=numbers[i]
+            } 
+            else {
+              oddNumbers.push(numbers[i]);
+              sumodd+=numbers[i]
+            }
+        }
+        console.log("Even numbers array:", evenNumbers);
+        console.log("Sum of even numbers:", sumeven);
+        console.log("Odd numbers array:", oddNumbers);
+        console.log("Sum of odd numbers:", sumodd);
+    </script>
+</body>
+</html>
