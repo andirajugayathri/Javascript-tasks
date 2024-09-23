@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: center;
+            height:100vh;
+            align-items: center;
+            column-gap: 20px;
+        }
+        button{
+            background-color: deeppink;
+            color:white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <button id="b1">Number 1 to 10</button>
+    <button id="b2">Number 1 to 100</button>
+    <button id="b3">Number 1 to 1000</button>
+    </div>
+    <script>
+        var a=document.querySelector("#b1")
+        a.addEventListener("click",function fun(){
+                alert(Math.round(Math.random()*10));
+        })
+        var a=document.querySelector("#b2")
+        a.addEventListener("click",function fun(){
+                alert(Math.round(Math.random()*100));
+        })
+        var a=document.querySelector("#b3")
+        a.addEventListener("click",function fun(){
+                alert(Math.round(Math.random()*1000));
+        })
+    </script>
+</body>
+</html>
